@@ -38,6 +38,7 @@ class buku extends CI_Controller {
         $buku['rak_id'] = $this->input->post('rak_id');
 
         $this->db->insert('buku',$buku);
+        $this->is_store_success();
     }
 
     public function edit($id)
@@ -78,11 +79,13 @@ class buku extends CI_Controller {
         $buku['rak_id'] = $this->input->post('rak_id');
 
         $this->db->where('id',$id)->update('buku',$buku);
+        $this->is_update_success();
     }
 
     public function delete($id)
     {
         $this->db->where('id',$id)->delete('buku');
+        $this->is_delete_success();
     }
 
     private function is_store_success()
