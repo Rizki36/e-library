@@ -2,7 +2,7 @@
     <div>
         <a href="<?= base_url('pengarang') ?>" class="btn btn-sm btn-secondary">Kembali</a>
     </div>
-    <h5 class="ml-auto">Buku/Pengarang</h5>
+    <h5 class="ml-auto">Buku/Pengarang/edit</h5>
 </div>
 
 <!-- form -->
