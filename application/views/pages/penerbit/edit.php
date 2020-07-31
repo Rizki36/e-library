@@ -1,3 +1,10 @@
+<div class="mb-3 d-flex">
+    <div>
+        <a href="<?= base_url('penerbit') ?>" class="btn btn-sm btn-secondary">Kembali</a>
+    </div>
+    <h5 class="ml-auto">Buku/Penerbit/Edit</h5>
+</div>
+
 <!-- form -->
 <form action="<?= base_url('penerbit/update/') . $penerbit->id ?>" method="POST">
     <div class="row">
@@ -34,8 +41,7 @@
         </div>
         <!-- button submit form -->
         <div class="col-12">
-            <a href="<?= base_url('penerbit') ?>" class="btn btn-secondary">Kembali</a>
-            <button class="btn btn-primary" type="submit">Update Penerbit</button>
+            <button class="btn btn-primary w-100" type="submit">Update Penerbit</button>
         </div>
     </div>
 
