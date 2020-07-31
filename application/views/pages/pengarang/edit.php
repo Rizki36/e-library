@@ -1,3 +1,10 @@
+<div class="mb-3 d-flex">
+    <div>
+        <a href="<?= base_url('pengarang') ?>" class="btn btn-sm btn-secondary">Kembali</a>
+    </div>
+    <h5 class="ml-auto">Buku/Pengarang</h5>
+</div>
+
 <!-- form -->
 <form action="<?= base_url('pengarang/update/').$pengarang->id ?>" method="POST">
     <div class="row">
@@ -35,8 +42,7 @@
 
         <!-- buttons -->
         <div class="col-12">
-            <a href="<?= base_url('pengarang') ?>" class="btn btn-secondary">Kembali</a>
-            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary w-100" type="submit">Submit</button>
         </div>
     </div>
 </form>
