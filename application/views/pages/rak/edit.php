@@ -1,3 +1,10 @@
+<div class="mb-3 d-flex">
+    <div>
+        <a href="<?= base_url('rak') ?>" class="btn btn-sm btn-secondary">Kembali</a>
+    </div>
+    <h5 class="ml-auto">Buku/Rak/Edit</h5>
+</div>
+
 <!-- form -->
 <form action="<?= base_url('rak/update/') . $rak->id ?>" method="POST">
     <div class="row">

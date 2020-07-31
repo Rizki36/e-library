@@ -1,3 +1,10 @@
+<div class="mb-3 d-flex">
+    <div>
+        <a href="<?= base_url('buku') ?>" class="btn btn-sm btn-secondary">Kembali</a>
+    </div>
+    <h5 class="ml-auto">Buku/Rak</h5>
+</div>
+
 <!-- form -->
 <form action="<?= base_url('rak/store') ?>" method="POST">
     <div class="row">
