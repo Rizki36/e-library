@@ -26,8 +26,7 @@
 
         <!-- button submit form -->
         <div class="col-12">
-            <a href="<?= base_url('rak') ?>" class="btn btn-secondary">Kembali</a>
-            <button class="btn btn-primary" type="submit">Update Rak</button>
+            <button class="btn btn-primary w-100" type="submit">Update Rak</button>
         </div>
     </div>
 
