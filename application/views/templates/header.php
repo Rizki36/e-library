@@ -10,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>AdminLTE 3 | Starter</title>
+    <title>SiPus | Buku</title>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome-free/css/all.min.css') ?>">
@@ -68,8 +68,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="<?= base_url('/') ?>" class="brand-link">
-                <img src="<?= base_url('assets/img/AdminLTELogo.png') ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <img src="<?= base_url('assets/img/logo.png') ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
+                <span class="d-block brand-text font-weight-light" style="line-height: 5px;">SiPus <small style="font-size: small;line-height: 0;">alpha</small></span>
+                <span class="font-weight-light" style="font-size: .7em;line-height: 0;">Sistem Perpustakaan</span>
             </a>
 
             <!-- Sidebar -->
@@ -80,7 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <img src="<?= base_url('assets/img/user2-160x160.jpg') ?>" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">R Fitra Rahman</a>
                     </div>
                 </div>
 
