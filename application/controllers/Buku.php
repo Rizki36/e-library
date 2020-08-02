@@ -32,6 +32,8 @@ class buku extends CI_Controller {
     {
         $buku['id'] = $this->input->post('id');
         $buku['judul_buku'] = $this->input->post('judul_buku');
+        $buku['tahun_buku'] = $this->input->post('tahun_buku');
+        $buku['jumlah_buku'] = $this->input->post('jumlah_buku');
         $buku['penerbit_id'] = $this->input->post('penerbit_id');
         $buku['pengarang_id'] = $this->input->post('pengarang_id');
         $buku['penerbit_id'] = $this->input->post('penerbit_id');
@@ -73,6 +75,8 @@ class buku extends CI_Controller {
     {
         $buku['id'] = $this->input->post('id');
         $buku['judul_buku'] = $this->input->post('judul_buku');
+        $buku['tahun_buku'] = $this->input->post('tahun_buku');
+        $buku['jumlah_buku'] = $this->input->post('jumlah_buku');
         $buku['penerbit_id'] = $this->input->post('penerbit_id');
         $buku['pengarang_id'] = $this->input->post('pengarang_id');
         $buku['penerbit_id'] = $this->input->post('penerbit_id');
