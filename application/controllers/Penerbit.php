@@ -70,6 +70,6 @@ class Penerbit extends CI_Controller {
             $this->session->set_flashdata('success','Penerbit berhasil dihapus!');
         else
             $this->session->set_flashdata('error','Penerbit Gagal dihapus!');
-        redirect('penerbit');
+        redirect('peminjaman');
     }
 }
