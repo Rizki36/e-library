@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2020 at 04:17 AM
+-- Generation Time: Aug 02, 2020 at 04:35 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -63,8 +63,8 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id`, `judul_buku`, `tahun_buku`, `penerbit_id`, `pengarang_id`, `rak_id`, `jumlah_buku`, `tanggal_pengadaan`) VALUES
-('1', 'Hari Indah Tanpa Mer', 0, '2', '2', 'rak-1', 0, NULL),
-('2', 'test', 0, '1', '1', 'rak-1', 0, NULL);
+('20200706', 'Kelabu', 2020, '2', '2', 'rak-1', 5, NULL),
+('20200801', 'Pudar', 2002, '1', '1', 'rak-1', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -87,7 +87,7 @@ CREATE TABLE `peminjaman` (
 --
 
 INSERT INTO `peminjaman` (`id`, `anggota_id`, `buku_id`, `is_kembali`, `tanggal_pinjam`, `tanggal_kembali`, `denda`) VALUES
-(1, '1', '1', '1', NULL, NULL, NULL);
+(1, '1', '20200706', '1', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -222,7 +222,7 @@ ALTER TABLE `buku`
 --
 ALTER TABLE `peminjaman`
   ADD CONSTRAINT `fk_peminjaman_anggota_1` FOREIGN KEY (`anggota_id`) REFERENCES `anggota` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_peminjaman_buku_1` FOREIGN KEY (`buku_id`) REFERENCES `buku` (`id`);
+  ADD CONSTRAINT `fk_peminjaman_buku_1` FOREIGN KEY (`buku_id`) REFERENCES `buku` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
