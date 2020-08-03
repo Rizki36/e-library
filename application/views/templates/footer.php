@@ -28,6 +28,8 @@
 <script src="<?= base_url('assets/js/adminlte.min.js') ?>"></script>
 <!-- js ku -->
 <script src="<?= base_url('assets/js/main.js') ?>"></script>
+<!-- bootstrap datepicker -->
+<script src="<?= base_url('assets/js/bootstrap-datepicker.min.js') ?>"></script>
 </body>
 
 </html>

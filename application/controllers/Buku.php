@@ -12,7 +12,9 @@ class buku extends CI_Controller {
                                     buku.jumlah_buku,
                                     penerbit.nama_penerbit as penerbit,
                                     pengarang.nama_pengarang as pengarang,
-                                    rak.lokasi as rak')
+                                    rak.lokasi as rak,
+                                    tanggal_pengadaan
+                                    ')
                             ->from('buku')
                             ->join('penerbit','penerbit.id = buku.penerbit_id')
                             ->join('pengarang','pengarang.id = buku.pengarang_id')
@@ -30,6 +32,8 @@ class buku extends CI_Controller {
 
     public function store()
     {
+        $tanggal_pengadaan = strtotime($this->input->post('tanggal_pengadaan'));
+        
         $buku['id'] = $this->input->post('id');
         $buku['judul_buku'] = $this->input->post('judul_buku');
         $buku['tahun_buku'] = $this->input->post('tahun_buku');
@@ -38,11 +42,12 @@ class buku extends CI_Controller {
         $buku['pengarang_id'] = $this->input->post('pengarang_id');
         $buku['penerbit_id'] = $this->input->post('penerbit_id');
         $buku['rak_id'] = $this->input->post('rak_id');
-
+        $buku['tanggal_pengadaan'] = date('Y-m-d',$tanggal_pengadaan);
+        
         $this->db->insert('buku',$buku);
         $this->is_store_success();
     }
-
+    
     public function edit($id)
     {
         $data['raks'] = $this->db->get('rak')->result();
@@ -50,13 +55,14 @@ class buku extends CI_Controller {
         $data['penerbits'] = $this->db->get('penerbit')->result();
         $data['buku'] = $this->db
         ->select('
-                buku.id,
-                buku.judul_buku,
-                buku.tahun_buku,
-                buku.jumlah_buku,
-                penerbit.id as penerbit,
-                pengarang.id as pengarang,
-                rak.id as rak
+                    buku.id,
+                    buku.judul_buku,
+                    buku.tahun_buku,
+                    buku.jumlah_buku,
+                    penerbit.id as penerbit,
+                    pengarang.id as pengarang,
+                    rak.id as rak,
+                    tanggal_pengadaan
                 ')
         ->from('buku')
         ->where('buku.id',$id)
@@ -65,14 +71,18 @@ class buku extends CI_Controller {
         ->join('rak','rak.id = buku.rak_id')
         ->get()
         ->result()[0];
-        
+
+        $data['buku']->tanggal_pengadaan = date('m/d/Y');
+
         $this->load->view('templates/header');
         $this->load->view('pages/buku/edit',$data);
         $this->load->view('templates/footer');
     }
-
+    
     public function update($id)
     {
+        $tanggal_pengadaan = strtotime($this->input->post('tanggal_pengadaan'));
+
         $buku['id'] = $this->input->post('id');
         $buku['judul_buku'] = $this->input->post('judul_buku');
         $buku['tahun_buku'] = $this->input->post('tahun_buku');
@@ -81,6 +91,7 @@ class buku extends CI_Controller {
         $buku['pengarang_id'] = $this->input->post('pengarang_id');
         $buku['penerbit_id'] = $this->input->post('penerbit_id');
         $buku['rak_id'] = $this->input->post('rak_id');
+        $buku['tanggal_pengadaan'] = date('Y-m-d',$tanggal_pengadaan);
 
         $this->db->where('id',$id)->update('buku',$buku);
         $this->is_update_success();

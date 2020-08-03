@@ -49,7 +49,7 @@
         </div>
 
         <!-- rak -->
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-12 col-md-3">
             <div class="form-group">
                 <label for="rak">Lokasi Buku</label>
                 <select name="rak_id" class="form-control" id="rak">
@@ -62,7 +62,7 @@
 
 
         <!-- penerbit -->
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-12 col-md-3">
             <div class="form-group">
                 <label for="penerbit">Penerbit</label>
                 <select name="penerbit_id" class="form-control" id="penerbit">
@@ -74,7 +74,7 @@
         </div>
 
         <!-- pengarang -->
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-12 col-md-3">
             <div class="form-group">
                 <label for="pengarang">Pengarang</label>
                 <select name="pengarang_id" class="form-control" id="pengarang">
@@ -82,6 +82,19 @@
                         <option value="<?= $pengarang->id ?>"><?= $pengarang->nama_pengarang ?></option>
                     <?php endforeach ?>
                 </select>
+            </div>
+        </div>
+
+        <!-- tanggal pengadaan -->
+        <div class="col-sm-12 col-md-3">
+            <div class="form-group">
+                <label for="tanggal-pengadaan">Tanggal Pengadaan</label>
+                <div class="input-group date" data-provide="datepicker">
+                    <input id="tanggal-pengadaan" name="tanggal_pengadaan" type="text" class="form-control">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -101,7 +114,7 @@ $this->load->view('templates/_alert');
     <table class="table table-bordered text-center mt-5">
         <thead>
             <tr>
-                <td colspan="8">List Buku</td>
+                <td colspan="9">List Buku</td>
             </tr>
             <tr>
                 <td style="width: 20px;">ID</td>
@@ -111,6 +124,7 @@ $this->load->view('templates/_alert');
                 <td>Lokasi</td>
                 <td>Penerbit</td>
                 <td>Pengarang</td>
+                <td>Tgl Pengadaan <br> d-m-y</td>
                 <td>act</td>
             </tr>
         </thead>
@@ -124,6 +138,7 @@ $this->load->view('templates/_alert');
                     <td><?= $buku->rak ?></td>
                     <td><?= $buku->penerbit ?></td>
                     <td><?= $buku->pengarang ?></td>
+                    <td><?= date('d-m-Y',strtotime($buku->tanggal_pengadaan)) ?></td>
                     <td>
                         <a href="<?= base_url('buku/edit/') . $buku->id ?>" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
                         <a href="<?= base_url('buku/delete/') . $buku->id ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>

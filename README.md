@@ -16,4 +16,5 @@ Sistem Perpustakaan
 - [x] Tambah, Update, Hapus Pengarang
 - [x] Tambah, Update, Hapus Penerbit
 - [x] Tambah, Update, Hapus Rak
+- [x] Tanggal pengadaan buku
 - [ ] Tanggal pengembalian buku

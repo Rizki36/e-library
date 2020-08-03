@@ -33,7 +33,7 @@
         </div>
 
         <!-- rak -->
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-12 col-md-3">
             <div class="form-group">
                 <label for="rak">Lokasi Buku</label>
                 <select name="rak_id" class="form-control" id="rak">
@@ -48,7 +48,7 @@
 
 
         <!-- penerbit -->
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-12 col-md-3">
             <div class="form-group">
                 <label for="penerbit">Penerbit</label>
                 <select name="penerbit_id" class="form-control" id="penerbit">
@@ -60,7 +60,7 @@
         </div>
 
         <!-- pengarang -->
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-12 col-md-3">
             <div class="form-group">
                 <label for="pengarang">Pengarang</label>
                 <select name="pengarang_id" class="form-control" id="pengarang">
@@ -68,6 +68,19 @@
                         <option value="<?= $pengarang->id ?>" <?= $pengarang->id == $buku->pengarang ? 'selected' : '' ?>><?= $pengarang->nama_pengarang ?></option>
                     <?php endforeach ?>
                 </select>
+            </div>
+        </div>
+
+        <!-- tanggal pengadaan -->
+        <div class="col-sm-12 col-md-3">
+            <div class="form-group">
+                <label for="tanggal-pengadaan">Tanggal Pengadaan</label>
+                <div class="input-group date" data-provide="datepicker">
+                    <input id="tanggal-pengadaan" value="<?= $buku->tanggal_pengadaan ?? '' ?>" name="tanggal_pengadaan" type="text" class="form-control">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
             </div>
         </div>
 
