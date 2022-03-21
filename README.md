@@ -9,6 +9,7 @@ Sistem Perpustakaan
 - Letakkan folder di htdocs
 - Buat database dengan nama sipus 
 - Import file database.sql
+- ubah base_url pada application\config\config.php sesuai dengan nama folder, contoh : http://localhost/sipus/
 
 ## Fitur
 - [x] Tambah, Update, Hapus Buku
